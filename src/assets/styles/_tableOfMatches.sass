@@ -1,0 +1,171 @@
+@import './_main.sass'
+// styling of entire page.......................................................................................
+.page
+  position: relative
+  top: 5vh
+  display: flex
+  flex-direction: row
+  h1
+    color: $white
+    margin-left: 20px
+// table styling.................................................................................................
+.tableOfMatches
+  border: solid 2px $beige
+  background-color: $black !important
+  padding: 10px
+  position: relative
+  height: 80vh
+  width: 70vw
+  background: white
+  margin-left: 30px
+  border-radius: 5px
+  overflow: hidden
+  .table
+    border: solid 2px $beige
+    background-color: $black
+    border-radius: 5px
+    width: 100%
+    position: relative
+    table
+      width: 100%
+    overflow-y: scroll
+    height: 85%
+    width: 100%
+    bottom: -38px
+    position: relative
+    th
+      color: $white
+      text-align: center
+      border-left: solid 2px
+      border-right: solid 2px
+      border-color: $beige
+    thead
+      position: sticky
+      top: 0
+    .tableHead
+      color: $black
+      background-color: $beige
+      border-left: solid 2px
+      border-right: solid 2px
+      border-color: $white
+//......................................variables to color teams names....................................
+.winner
+  color: $darkergreen !important
+.loser
+  color: red !important
+.noData
+  color: $white !important
+//..................................Styling top part of table.........................................
+.top
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  .chooseMatches
+    .group
+      margin-right: 20px
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      width: 40%
+      align-items: center
+    label
+      color: $white
+      margin: 15px
+    input
+      cursor: pointer
+      outline: none
+      width: 30px
+      height: auto
+      appearance: none
+      outline: none
+      cursor: pointer
+      border-radius: 20px
+      padding: 8px 8px
+      background: #454857
+      color: #bdbdbdbd
+      &:checked
+        background-image: linear-gradient(180deg, #fdfdfd, $beige)
+        color: #fff
+        box-shadow: 0 1px 1px #0000002e
+        text-shadow: 0 1px 0px #79485f7a
+.matchesNotFound
+  position: absolute
+  top: 40%
+  left: 30%
+// ........................................mobile styling ...................................................................................
+.mobileTable
+  position: relative
+  width: 90% !important
+  top: 2vh
+  height: 75vh
+  margin: auto
+  h1
+    color: $white
+  .top
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-content: center
+    align-items: center
+    label
+      font-size: 12px
+.table-mobile
+  th
+    font-size: 12px
+  align-content: center
+  align-items: center
+.chooseLeague
+  display: flex
+  align-content: center
+  align-items: center
+  flex-direction: column
+  justify-content: center
+  top: -2vh
+  width: 90% !important
+  margin: auto
+  button
+    transition: 0.5s ease
+    &:hover
+      background-color: #424242b4
+    border: solid 2px $beige
+    font-family: $font-main
+    font-size: 32px
+    color: $beige
+    background-color: $black
+    border-radius: 5px
+    width: 100%
+    height: 10vh     
+    margin-left: 0
+.mobilepage
+  position: relative
+  top: 5vh
+  display: flex
+  flex-direction: column
+.leagues-list-mobile
+  overflow-y: scroll
+  position: fixed
+  top: 22vh
+  left: 7vw
+  width: 86vw
+  height: 70vh
+  z-index: 6
+  background: $white
+  transition: 0.7s ease-in
+  .league
+    cursor: pointer
+    &:active
+      background-color: $beige
+      h2
+        color: $white
+    border-bottom: solid 2px $beige
+    display: flex
+    flex-direction: row
+    img
+      width: 60px
+      margin: 5px
+    h2
+      margin-left: 15px
+      color: $black
+.notShow
+  display: none
+  height: 0vh

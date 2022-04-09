@@ -1,0 +1,84 @@
+@import './_main.sass'
+//right element
+.list
+  margin-left: 30px
+  height: 80vh
+  background: $white
+  width: 20vw
+  box-shadow: 2px -2px 10px #000000
+  border-radius: 5px
+  background-color: $black
+  border: solid 2px $beige
+  padding: 5px
+  .leagues-list
+    border: solid 2px $beige
+    padding-right: 5px 
+    overflow: scroll
+    overflow-x: hidden
+    height: 80%
+    position: relative
+    top: 5%
+    bottom: 0%
+    border-radius: 5px
+    .league
+      &:hover
+        background-color: $beige
+        cursor: pointer
+      background-color: $white
+      padding-left: 5px
+      width: 95%
+      display: flex
+      flex-direction: row
+      align-content: center
+      align-items: center
+      border-botom-width: 3px
+      box-shadow: 1px -2px 5px #000000
+      border-radius: 5px
+      margin:10px
+      transition: 0.5s ease
+      img
+        width: 60px
+        margin: 5px
+      h2
+        font-size: 18px
+        margin: 10px
+  .filter
+    position: relative
+    top: 2%
+    h1
+      margin-left: 10px
+      color: $white
+      font-size: 20px
+    input
+      font-family: $font-main
+      font-size: 28px
+      margin: 5px
+      width: 95%
+      height: 50px
+      border-radius: 5px
+      &:active
+        outline: none
+//scrollbar styling
+@mixin scrollbar($size, $primary) 
+  ::-webkit-scrollbar 
+    width:  $size
+    height: $size
+    
+  ::-webkit-scrollbar-thumb 
+    background: $primary
+    border-radius: 3px
+    margin: 2px
+    
+  ::-webkit-scrollbar-track 
+    background: none
+@include scrollbar(15px, $beige)
+
+//left elment
+.matches
+  height: 70vh
+  width: 100%
+  background-color: $white
+  z-index: 4
+
+
+  
