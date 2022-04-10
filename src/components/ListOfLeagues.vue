@@ -11,10 +11,11 @@
     </div>
     <!--Button for opening of leagues mobile list-->
     <div class="chooseLeague" v-if="this.tabletView">
-      <button @click="openListOfLeagues()" class="openList">Choose League</button>
+      <button @click="openListOfLeagues()" class="openList animate__animated animate__pulse">Choose League</button>
     </div>
     <!--Table on which all matches are shown. Radio buttons on top hlep filter matches by their status-->
     <div :class="(!this.tabletView)?'tableOfMatches col-md-7':'tableOfMatches mobileTable'">
+      <div class="spinner" v-if="this.contentLoading"></div>
       <!--Container with competition name and radio buttons to choose which mathes to look for-->
       <div class="top">
         <h1 v-if="matches !== null" class="leagueName">{{this.matches.competition.name}}</h1>
@@ -29,8 +30,8 @@
       <!--Table of matches-->
       <div :class="(this.mobileView)?'table table-mobile':'table'">
         <!--Message which is shown when no matches are found-->
-        <h1 class="matchesNotFound" v-if="this.allMatches.length === 0">Matches not found</h1>
-        <table class="tableX" v-if="matches !== null">
+        <div class="messageNotFound"><h1 class="matchesNotFound" v-if="this.allMatches.length === 0">Matches not found</h1></div>
+        <table class="tableX" v-if="matches !== null && !this.contentLoading">
         <thead>
           <tr>
             <th class="tableHead">Home team</th>
@@ -113,7 +114,8 @@ export default {
       mobileView: false,
       tabletView: false,
       currentLeague: null,
-      openList: false
+      openList: false,
+      contentLoading: false
     }
   },
   methods: {
@@ -143,6 +145,7 @@ export default {
     },
     // get all availible matches from league by id
     async getMatches (id) {
+      this.contentLoading = true
       var newmatches = null
       console.log(this.allMatches)
       if (this.liveEvent === true) {
@@ -167,8 +170,7 @@ export default {
         this.allMatches = null
         this.allMatches = newmatches
       }
-      console.log(newmatches)
-      console.log(this.finished, this.scheduled, this.liveEvent)
+      this.contentLoading = false
     },
     // check for events that are live
     isLiveEvent () {

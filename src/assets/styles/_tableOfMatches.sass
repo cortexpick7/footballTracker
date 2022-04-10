@@ -10,6 +10,19 @@
     margin-left: 20px
 // table styling.................................................................................................
 .tableOfMatches
+  .spinner
+    border: 3px dotted #b6b6b6
+    border-top: 3px dotted #7e7e7e
+    border-radius: 50%
+    z-index: 7 
+    width: 36px
+    height: 36px
+    animation: spin 2s linear infinite
+    @keyframes spin 
+      0%
+        transform: rotate(0deg)
+      100%
+        transform: rotate(360deg)
   border: solid 2px $beige
   background-color: $black !important
   padding: 10px
@@ -88,10 +101,13 @@
         color: #fff
         box-shadow: 0 1px 1px #0000002e
         text-shadow: 0 1px 0px #79485f7a
-.matchesNotFound
-  position: absolute
-  top: 40%
-  left: 30%
+.messageNotFound
+  display: flex
+  justify-content: center
+  .matchesNotFound
+    top: 50vh
+    position: fixed
+    text-align: center
 // ........................................mobile styling ...................................................................................
 .mobileTable
   position: relative

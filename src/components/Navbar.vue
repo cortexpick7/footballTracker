@@ -5,16 +5,41 @@
       <i class="fa fa-map-signs" aria-hidden="true"></i>
     </div>
     <!--Main navigation-->
-    <div :class="(!this.mobileView)?'navigation col-md-6':'navigation-mobile'" v-if="!this.mobileView||this.sideBarActive">
-      <div class="nav-item">
-        <router-link @click="activateSideBar()" class="animate__animated animate__fadeInDown animate__delay-1s animate__faster" to="/" style="text-decoration: none;">Matches</router-link>
-      </div>
-      <div class="nav-item">
-        <router-link @click="activateSideBar()" class="animate__animated animate__fadeInDown animate__delay-1s animate__faster" to="/Leagues" style="text-decoration: none;">Leagues</router-link>
-      </div>
-      <div class="nav-item">
-        <router-link @click="activateSideBar()" class="animate__animated animate__fadeInDown animate__delay-1s animate__faster" to="/Players" style="text-decoration: none;">Players</router-link>
-      </div>
+    <div :class="(!this.mobileView)?'navigation col-md-6':'navigation-mobile'" v-if="!this.mobileView || (this.mobileView && this.sideBarActive)">
+      <router-link @click="activateSideBar()"
+      class="animate__animated animate__fadeInDown animate__delay-1s animate__faster"
+      to="/"
+      style="text-decoration: none;"
+      >
+        <div class="nav-item">
+          <a>
+            Matches
+          </a>
+        </div>
+      </router-link>
+      <router-link @click="activateSideBar()"
+      class="animate__animated animate__fadeInDown animate__delay-1s animate__faster"
+      to="/Leagues"
+      style="text-decoration: none;"
+      >
+        <div class="nav-item">
+          <a >
+            Leagues
+          </a>
+        </div>
+      </router-link>
+      <router-link
+      @click="activateSideBar()"
+      class="animate__animated animate__fadeInDown animate__delay-1s animate__faster"
+      to="/Players"
+      style="text-decoration: none;"
+      >
+        <div class="nav-item">
+          <a>
+            Players
+          </a>
+        </div>
+      </router-link>
     </div>
     <!--Hamburger menu-->
     <div class="hamburger-icon" v-if="this.mobileView" @click="activateSideBar()">
@@ -23,7 +48,7 @@
       <div class="bar-3 animate__animated animate__fadeInLeft animate__faster"></div>
     </div>
   </div>
-  <div :class="(this.sideBarActive)?'mobile-bg animate__animated animate__slideInRight':'mobile-bg animate__animated animate__slideOutRight'" v-if="this.sideBarActive"></div>
+  <div :class="(this.sideBarActive)?'mobile-bg':'mobile-bg'" v-if="this.sideBarActive"></div>
 </template>
 
 <script>
@@ -64,7 +89,9 @@ export default {
       }
     },
     activateSideBar () {
-      this.sideBarActive = !this.sideBarActive
+      if (this.mobileView) {
+        this.sideBarActive = !this.sideBarActive
+      }
     }
   }
 }
