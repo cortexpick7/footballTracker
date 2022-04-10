@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Matches from '../views/Matches.vue'
+import Teams from '../views/Teams.vue'
 
 const routes = [
   {
@@ -8,9 +9,9 @@ const routes = [
     component: Matches
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/teams',
+    name: 'Teams',
+    component: Teams
   }
 ]
 

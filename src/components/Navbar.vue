@@ -19,12 +19,12 @@
       </router-link>
       <router-link @click="activateSideBar()"
       class="animate__animated animate__fadeInDown animate__delay-1s animate__faster"
-      to="/Leagues"
+      to="/Teams"
       style="text-decoration: none;"
       >
         <div class="nav-item">
           <a >
-            Leagues
+            Teams
           </a>
         </div>
       </router-link>

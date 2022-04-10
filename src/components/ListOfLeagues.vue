@@ -20,7 +20,7 @@
       <div class="top">
         <h1 v-if="matches !== null" class="leagueName">{{this.matches.competition.name}}</h1>
         <div class="chooseMatches">
-          <fieldset id="group" v-if="matches !== null">
+          <fieldset :class="(this.windowWidth <= 600)?'radiobuttonsList':''" id="group" v-if="matches !== null">
               <input type="radio" @input="isFinished(), getMatches(this.matches.competition.id)" name="radio"/><label>Finished</label>
               <input type="radio" @input="isScheduled(), getMatches(this.matches.competition.id)" name="radio"/><label>Scheduled</label>
               <input type="radio" @input="isLiveEvent(), getMatches(this.matches.competition.id)" name="radio" checked/><label>LIVE</label>

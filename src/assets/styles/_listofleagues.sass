@@ -3,15 +3,14 @@
 .list
   margin-left: 30px
   height: 80vh
-  background: $white
   width: 20vw
   box-shadow: 2px -2px 10px #000000
   border-radius: 5px
-  background-color: $black
-  border: solid 2px $beige
+  background-color: $mint
+  border: solid 2px $black
   padding: 5px
   .leagues-list
-    border: solid 2px $beige
+    border: solid 2px $black
     padding-right: 5px 
     overflow: scroll
     overflow-x: hidden
@@ -24,7 +23,7 @@
       &:hover
         background-color: $beige
         cursor: pointer
-      background-color: $white
+      background-color: $blue
       padding-left: 5px
       width: 95%
       display: flex
@@ -32,15 +31,17 @@
       align-content: center
       align-items: center
       border-botom-width: 3px
-      box-shadow: 1px -2px 5px #000000
       border-radius: 5px
       margin:10px
       transition: 0.5s ease
       img
-        width: 60px
+        width: 50px
         margin: 5px
       h2
+        padding-left: 5px 
+        border-left: solid 1px $black
         font-size: 18px
+        color: $white
         margin: 10px
   .filter
     position: relative
@@ -48,7 +49,8 @@
     h1
       margin-left: 10px
       color: $white
-      font-size: 20px
+      width: 100%
+      font-size: 30px
     input
       font-family: $font-main
       font-size: 28px
@@ -56,6 +58,7 @@
       width: 95%
       height: 50px
       border-radius: 5px
+      border: none
       &:active
         outline: none
 //scrollbar styling
@@ -71,7 +74,7 @@
     
   ::-webkit-scrollbar-track 
     background: none
-@include scrollbar(15px, $beige)
+@include scrollbar(15px, $blue)
 
 //left elment
 .matches
